@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Body Index</title>
+</head>
+<body>
+    <p>Weight:</p>
+    <input type="text" id="weight"><br>
+    <p>Height:</p>
+    <input type="text" id="height"><br><br>
+    <button type="button" onclick="aclick()">Click</button><br>
+    <p id="hienthi"></p>
+    <script>
+        function aclick(){
+            //alert("")
+            let weight = document.getElementById("weight");
+            let a = parseFloat(weight.value);
+
+            let height = document.getElementById("height");
+            let b = parseFloat(height.value);
+            let bmi = a*10000/(b**2);
+
+            if (bmi < 18.5){
+                //alert("1");
+                document.getElementById("hienthi").innerHTML = "Underweigt!";
+            }else if (bmi <25){
+                //alert("2");
+                document.getElementById("hienthi").innerHTML = "Normal!";
+            }else if (bmi < 30){
+                //alert("3");
+                document.getElementById("hienthi").innerHTML = "Overweight!";
+            }else {
+                //alert("4");
+                document.getElementById("hienthi").innerHTML = "Obese!";
+            }
+        }
+    </script>
+</body>
+</html>
